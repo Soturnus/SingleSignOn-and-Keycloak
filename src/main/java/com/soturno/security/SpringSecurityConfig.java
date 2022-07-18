@@ -31,7 +31,9 @@ public class SpringSecurityConfig {
 		.defaultSuccessUrl("/home")
 		.usernameParameter("username")
 		.passwordParameter("password")
-		.and().logout().permitAll();
+		.and().exceptionHandling().accessDeniedPage("/access-denied")
+		.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
+		.permitAll();
 		
 		http.headers().frameOptions().sameOrigin();
 		
