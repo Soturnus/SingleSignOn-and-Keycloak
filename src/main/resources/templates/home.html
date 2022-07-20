@@ -11,11 +11,10 @@
   </head>
   <body>
      <div class="container">
-        <h2 class="form-signin-heading">Welcome <span th:text = "${#authentication.getPrincipal().getUsername()}"></span> </h2>
+        <h2 class="form-signin-heading">Welcome <span th:text = "${#authentication.getPrincipal()}"></span>  to Professor-APP</h2>
 
-		<!-- <a href="/logout">Logout</a> -->
-		<button type="button"><a href="/manage-students" sytle="text-decoration: none;">Manage Students</a></button>
-		<button type="button"><a href="/logout" sytle="text-decoration: none;">Logout</a></button>
+		<button type="button"><a href="/professor/manage-students" sytle="text-decoration: none;">Manage Students</a></button>
+		<button type="button"><a href="/professor/logout" sytle="text-decoration: none;">Logout</a></button>
 </div>
 </body>
 </html>

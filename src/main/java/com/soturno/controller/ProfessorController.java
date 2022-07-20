@@ -6,15 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class StudentController {
+public class ProfessorController {
 
-	@GetMapping(value = {"/", "/login"})
+	@GetMapping("/contact-us")
 	public ModelAndView login() {
-		ModelAndView modelAndView = new ModelAndView("login");
+		ModelAndView modelAndView = new ModelAndView("/contact-us");
 		return modelAndView;
 	}
 	
 	@GetMapping("/home")
+	@PreAuthorize("hasAuthority('PROFESSOR')")
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView("home");
 		return modelAndView;
